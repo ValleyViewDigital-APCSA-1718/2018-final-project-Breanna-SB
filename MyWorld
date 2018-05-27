@@ -1,0 +1,41 @@
+import java.util.Random;
+
+public class MyWorld extends World
+{
+    Counter counter = new Counter();
+    public MyWorld()
+    {    
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(1500, 800, 1); 
+        
+        addObject(counter, 100, 40);
+        
+        Fish herby = new Fish();
+        addObject(herby, 750, 400);
+        
+        addObject(new Insect(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(getHeight()));
+        addObject(new Insect(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(getHeight()));
+        addObject(new Insect(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(getHeight()));
+        addObject(new Insect(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(getHeight()));
+        
+        addObject(new Burger(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(getHeight()));
+        addObject(new Burger(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(getHeight()));
+        addObject(new Burger(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(getHeight()));
+        addObject(new Burger(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(getHeight()));
+        
+        addObject(new Pizza(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(getHeight()));
+        addObject(new Pizza(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(getHeight()));
+        addObject(new Pizza(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(getHeight()));
+        addObject(new Pizza(), Greenfoot.getRandomNumber(getWidth()), Greenfoot.getRandomNumber(getHeight()));
+        
+
+        
+    }
+    
+    public Counter getCounter()
+    {
+        return counter;
+    }
+    
+    
+}// end MyWorld class
