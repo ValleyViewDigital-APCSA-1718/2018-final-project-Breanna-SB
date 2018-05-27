@@ -1,0 +1,28 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Parent class of the child class Fish
+ */
+public class Aquatic extends Actor
+{
+    String end;
+    
+    //Constructor
+    public Aquatic()
+    {
+        end = "GAME OVER!";
+    } //end constructor
+    
+    //Getter
+    public String getEnd()
+    {
+        return end;
+    }// end getter
+    
+    //toString
+    public String toString()
+    {
+        String result = end + "\n";
+        return result;
+    }// end toString
+}//end Aquatic class 
