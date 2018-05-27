@@ -1,0 +1,36 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
+import java.util.ArrayList;
+/**
+ * The lasers shoot away the burgers and pizzas if they are in the
+ *   fish's path of eating the insect.
+ */
+public class Laser extends Actor
+{
+    public void act() 
+    {
+        // Add your action code here.
+        move(8);
+        shoot();
+    }    
+    
+    /**
+     * The laser destroys the burger and pizza when it touches them.
+     */
+    public void shoot()
+    {
+        Actor burger = getOneIntersectingObject(Burger.class);
+        if(burger != null)
+        {
+            getWorld().removeObject(burger);
+        }//end if
+        
+        Actor pizza = getOneIntersectingObject(Pizza.class);
+        if(pizza != null)
+        {
+            getWorld().removeObject(pizza);
+        }//end if
+    }//end method shoot
+    
+    
+}//end class Laser
