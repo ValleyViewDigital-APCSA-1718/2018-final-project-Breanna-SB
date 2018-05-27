@@ -1,0 +1,11 @@
+Game Title: Don't Touch Me!
+
+Description: My project will be a single-player action game that tests your vast reflex skills and agility coordination. The player will play as a fish. The objective of the game is to try to avoid the falling food and not touch it. You can eat the spiders that are scattered on the screen. By eating the insects, you gain and score more points on the scoreboard that is displayed at the top left of the screen. The goal is to score as much points as possible and beat your high score.
+
+How To Play: Use the "UP", "DOWN", "RIGHT", and "LEFT" arrow keys to move the fish. Press the "SPACE" bar to shoot at the burgers and pizzas.
+
+Special Features:
+
+Your score will be at the top left of the screen and it will increase by one point every time you eat an insect.
+The falling food and insect will fall until it gets to the bottom and then pop back up randomly through the game.
+As soon as you touch a burger or pizza, you lose and the game is over. The fish will disappear from the screen.
