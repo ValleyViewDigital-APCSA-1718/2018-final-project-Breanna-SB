@@ -1,0 +1,45 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
+import java.util.ArrayList;
+/**
+ * Parent class of Burger and Pizza classes
+ */
+public class HumanFood extends Actor
+{
+    private List<Laser> lasers;
+    String end;
+    /**
+     * Once the laser touches the burger or pizza, it will disappear.
+     */
+    public void deleteLaser()
+    {
+        lasers = getWorld().getObjects(Laser.class);
+        for(int i = 0;i < lasers.size();i++)
+        {
+            if(this.isTouching(Laser.class))
+            {
+                getWorld().removeObject(lasers.get(i));
+            } //end inner if
+        } //end for loop
+    } //end method
+    
+    //Constructor
+    public HumanFood()
+    {
+        end = "GAME OVER!";
+    } //end constructor
+    
+    //Getter
+    public String getEnd()
+    {
+        return end;
+    }// end getter
+    
+    //toString
+    public String toString()
+    {
+        String result = end + "\n";
+        return result;
+    }// end toString
+    
+} // end class HumanFood
