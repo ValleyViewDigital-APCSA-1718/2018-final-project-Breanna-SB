@@ -1,0 +1,26 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Score board on the screen that adds 1 point for each insect
+ * that is eaten
+ */
+public class Counter extends Actor
+{
+    private int score = 0;
+    
+    public Counter()
+    {
+        setImage(new GreenfootImage("Score : " + score, 40, Color.GREEN, Color.BLACK));
+    }
+    
+    /**
+     * Adds one point to the score board
+     */
+    public void addScore()
+    {
+        int point = 1;
+        score += point;  
+        setImage(new GreenfootImage("Score : " + score, 40, Color.GREEN, Color.BLACK));
+    }//end method addScore
+    
+}//end class Counter
