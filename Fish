@@ -1,0 +1,88 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * The child class of Aquatic and the main character of the game. The player
+ * will be controlling the fish throughout the game.
+ */
+public class Fish extends Aquatic
+{
+    public void act() 
+    {
+        // Add your action code here.
+        arrowKeys();
+        eat();
+        noTouch();
+
+    }   //end act method
+    
+    /**
+     * The arrow keys to play are the up, right, down, and left arrows on 
+     * the keyboard to move the fish. The spacebar is to shoot the burgers
+     * and pizzas away.
+     */
+    public void arrowKeys()
+    {
+        if(Greenfoot.isKeyDown("right"))
+        {
+            move(10);
+        }
+        
+        if(Greenfoot.isKeyDown("left"))
+        {
+            move(-10);
+        }
+
+        if(Greenfoot.isKeyDown("up"))
+        {
+            setLocation(getX(), getY()-5);
+        }
+        
+        if(Greenfoot.isKeyDown("down"))
+        {
+            setLocation(getX(), getY()+5);
+        }
+        
+        if ("space".equals(Greenfoot.getKey()))
+        {
+            getWorld().addObject(new Laser(), getX(), getY());
+        }
+    }//end method arrowKeys
+    
+    
+    /**
+     * If the fish eats an insect, one point will be added to the score.
+     */
+    public void eat()
+    {
+        Actor eatInsect = getOneObjectAtOffset(0,0, Insect.class);
+        if(eatInsect != null)
+        {
+            World myWorld = getWorld();
+            myWorld.removeObject(eatInsect);
+            MyWorld ocean = (MyWorld)myWorld;
+            Counter counter = ocean.getCounter();
+            counter.addScore();
+        } // end if eatInsect not null
+    } // end method eat
+    
+    /**
+     * If the fish touches a burger or pizza, the screen will show that the 
+     * game is over.
+     */
+    public void noTouch()
+    {
+        if(isTouching(Burger.class) || isTouching(Pizza.class))
+        {
+            getWorld().showText(toString(), 725, 400);
+        } 
+    }//end method noTouch
+
+    //toString
+    public String toString()
+    {
+        String result = super.toString();
+        return result;
+    }//end toString
+    
+    
+}
