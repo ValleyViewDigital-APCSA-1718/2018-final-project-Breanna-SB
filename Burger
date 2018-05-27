@@ -1,0 +1,59 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.Random;
+/**
+ * Child class of HumanFood
+ */
+public class Burger extends HumanFood
+{
+    private int vertSpeed = 1;
+    public void act() 
+    {
+        // Add your action code here.
+        fall();
+        fishDisappear();
+        super.deleteLaser();
+        relocate();
+    }    
+    
+    /**
+     * The fish will disappear if it touches the burger.
+     */
+    public void fishDisappear()
+    {
+        Actor disappear = getOneIntersectingObject(Fish.class);
+        if(disappear != null)
+        {
+            getWorld().removeObject(disappear);
+            getWorld().showText(toString(), 725, 400);
+        }
+    }//end method fishDisappear
+    
+    /**
+     * The burger will fall vertically down the screen.
+     */
+    public void fall()
+    {
+        setLocation(getX(), getY() + vertSpeed);
+    }
+    
+    /**
+     * When the burger falls at the bottom of the screen, it will pop back up
+     * at the top of the screen.
+     */
+    public void relocate()
+    {
+        if(isAtEdge())
+        {
+            move(1);
+            setLocation(Greenfoot.getRandomNumber(1500), Greenfoot.getRandomNumber(800));
+        }//end if statement
+    }//end method relocate
+    
+    //toString
+    public String toString()
+    {
+        String result = super.toString();
+        return result;
+    }//end toString
+    
+} //end class Burger
